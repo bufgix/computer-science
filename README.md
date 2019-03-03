@@ -1,6 +1,7 @@
 # Tam özelikli NodeJS ile yazılmış web uygulaması
 
-![banner](https://i.resimyukle.xyz/2HVeJf.png)
+
+<img src="https://i.resimyukle.xyz/2HVeJf.png" width="400" height="400"/>
 
 Bu proje ACMKTU için yapılmıştır
 
@@ -13,7 +14,7 @@ Bu proje ACMKTU için yapılmıştır
 
 Dürüst olmak gerekirse cok daha iyi yazabilirdim. NodeJS de daha newbie olduğum için oldukça fazla kötü yazılmış kod görebilirsiniz. Issue veya PR açarak beğenmediğiniz kısmları söyleyebilirsiniz.
 
-ve bu site şuan yayında! Bi göz atın [computersciencetr.com](http://computersciencetr.com:8080)
+ve bu uygulama şuan yayında! Bi göz atın [computersciencetr.com](http://computersciencetr.com:8080)
 
 ### Özel teşekkür
 [Furkan Şahin Kulaksız](https://www.instagram.com/frknshnklksz/) (`/about`, `/articles/new` ve diğer grafik tasarımarı için)
