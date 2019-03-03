@@ -1,0 +1,150 @@
+html {
+    
+  }
+  
+  *{
+    outline: none;
+  }
+  
+  
+  .kategori{
+    margin-top: 30px;
+    background-color: red;
+    background: white;
+  }
+  
+  .articleform{
+    margin-top: 100px;
+    width: 800px;
+    height: 800px;
+    display: block;
+    transform: translate(45%,-10%);
+    background: transparent;
+    text-align: center;
+    border-color: yellow;
+  }
+  
+  
+  
+  .articleform input[type="text"]{
+    margin-left: 10px;
+    display: block;
+    border: 5px;
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    float: left;
+    border: 1px solid #FE8702;  
+    border-image-source: linear-gradient(#FE8702, #DA1C5E);
+    border-image-slice: 10;
+    /*padding: 2em;*/
+    background: transparent;
+    color: white;
+    border-radius: 15px;
+    outline: none;
+  }
+  
+  #article{
+    display: block;
+    float: left;
+    width: 97%;
+    border: 1px solid #FE8702;  
+    border-image-source: linear-gradient(#FE8702, #DA1C5E);
+    border-image-slice: 20;
+    padding: 2em;
+    background: transparent;
+    color: white;
+    border-radius: 15px;
+    margin: 5px auto;
+    padding: 20px 20px;
+    outline: none;
+  }
+  
+  .articleform input[type="submit"]{
+    display: block;
+    width: 90px;
+    float: right;
+    padding: 8px 5px;
+    border-radius: 10px;
+    outline: none;
+    border-color: red;
+    color: white;
+    background: transparent;
+  }
+  
+  .articleform input[type="submit"]:hover{
+    background-color: red;
+    transition: .25s;
+  }
+  
+  .articleform input[type=submit]{
+    background-image: linear-gradient(#FE8702, #DA1C5E); 
+    color: white;
+  }
+  
+  
+  
+  ::placeholder{
+    letter-spacing: 3px;
+  }
+  
+  .select-image{
+    background-image: linear-gradient(#FE8702, #DA1C5E); 
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: white;
+    float: left;
+    border-radius: 10px;
+  }
+  
+  
+  .titlearticle{
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 0px;
+      color: white;
+      letter-spacing: 0.5cm;
+      animation: colorchange 3sn linear infinite alternate;
+      text-align: center;
+      letter-spacing: 0.5cm;
+      color: #313131;
+      font-weight: bold;
+      
+  }
+  
+  @keyframes baslikcolorchange {
+    0% {
+        color: red;
+    }
+  
+    25% {
+        color: yellow;
+    }
+  
+    50% {
+        color: blue;
+    }
+    75%{
+        color: white;
+    }
+  
+    100% {
+        color: green;
+    }
+  }
+  
+  
+  
+    @media screen and (max-width: 55em){
+      .articleform {
+        width: 20rem;
+        height: 0px;
+        margin-top: -40px;
+        transform: translate(7%,0%);
+      }
+      .select-image {
+          width: 60%;
+      }
+    }
+    

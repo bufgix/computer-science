@@ -1,0 +1,48 @@
+extends layout.pug
+
+block styles
+    link(rel="stylesheet", href="/static/css/index.css")
+
+block content
+    .container.mt-3
+        if posts.length > 0
+            each post in posts
+                .post
+                    .row
+                        .col-md-4
+                            img.img-fluid(src="/static/images/" + post.img_path, alt="postimage")
+                        .col-md-8
+                            .row
+                                .col-md-6
+                                    h1(style="text-transform: capitalize") #{post.title}
+                                .col-md-6.d-flex.align-items-end.flex-column
+                                    span.mt-auto #{post.owner_name} | #{post.owner_email}
+                            hr.header-separator
+                            .spoiler
+                                p!= removeMd(post.spoiler)
+                                
+                                .parent
+                                    .tag
+                                        p.align-middle.tag Tag: #{post.category}
+                                    .read-more
+                                        a(href="/articles/"+ post.category + "/" + post.slug).read-more Devamını oku
+                hr.post-separator
+        
+        else
+            h2.text-center Henüz muhteşem bi'makale yazılmamış :(   Yarın tekrar uğra.
+
+        if posts.length > 0
+            .container.d-flex.justify-content-center
+                nav(aria-label='Page navigation example')
+                    ul.pagination
+                        if pageCount[0] -1 >= 1
+                            li.page-item
+                                a.page-link(href='?page=' + parseInt(pageCount[0] - 1)) Geri
+                        each count in pageCount
+                            if pageLimit != 1
+                                li.page-item
+                                    a.page-link(href='?page=' + count) #{count}
+                        if pageLimit > pageCount[pageCount.length -1]
+                            li.page-item
+                                a.page-link(href='?page=' + parseInt(pageCount[pageCount.length -1] + 1) ) İleri
+

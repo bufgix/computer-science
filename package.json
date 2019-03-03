@@ -1,0 +1,43 @@
+{
+  "name": "PersonelBlog",
+  "version": "1.0.0",
+  "description": "Simplex is better than complex",
+  "engines": {
+    "node": "10.x"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "nodemon ."
+  },
+  "author": "simplex",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.16.4",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.1",
+    "jstransformer-markdown-it": "^2.1.0",
+    "markdown-it": "^8.4.2",
+    "mongoose": "^5.4.5",
+    "mongoose-paginate": "^5.0.3",
+    "mongoose-unique-validator": "^2.0.2",
+    "multer": "^1.4.1",
+    "node-markdown": "^0.1.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.3",
+    "remove-markdown": "^0.3.0",
+    "slugify": "^1.3.4",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ]
+}

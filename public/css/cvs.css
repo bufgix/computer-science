@@ -1,0 +1,23 @@
+.list-group-item {
+    background-color: #100E17;
+    padding: 10px;
+}
+.download-link, .name {
+    font-size: 24px;
+    font-weight: 500;
+    background: linear-gradient(to right, #fe8702, #da1c5e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cv-wrap {
+    position: relative;
+    background: linear-gradient(to right, #fe8702, #da1c5e);
+    padding: 2px;
+}
+
+@media screen and (max-width: 55em) {
+    .download-link, .name {
+        font-size: 18px;
+    }
+}

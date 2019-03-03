@@ -1,0 +1,27 @@
+extends layout
+
+block scripts
+    link(rel="stylesheet", href="/static/css/article.css")
+
+block content
+    .container
+        .post-wrap
+            img.img-fluid(src="/static/images/" + post.img_path, alt="singlepostimage")
+            if user
+                if user.isAdmin || owner_status
+                    .row
+                        .col-md-9
+                            h1.post-title #{post.title}<br><span>#{post.owner_name} | #{post.owner_email}</span>
+                        .col-md-3
+                            .row.mt-3
+                                .col-md-6.d-flex.justify-content-center
+                                    a.edit(href="/articles/" + post.category + "/"+ post.slug + "/update") Düzenle
+                                .col-md-6.d-flex.justify-content-center
+                                    a.edit(href="/articles/" + post.category + "/"+ post.slug + "/delete") Sil
+                else
+                    h1.post-title #{post.title}<br><span>#{post.owner_name} | #{post.owner_email}</span>
+            else
+                h1.post-title #{post.title}<br><span>#{post.owner_name} | #{post.owner_email}</span>
+            .post-separator
+            .content
+                != md(post.content)

@@ -1,0 +1,46 @@
+extends layout
+
+block styles
+    link(rel='stylesheet', href='/static/css/articlenew.css')
+
+block content
+    #stars
+    #stars2
+    #stars3
+    #stars4
+    if post
+        form.articleform(action="", method="POST", autocomplete="off")
+            .form-group
+                .row(style='margin-right: 10px; margin-top: 40px;')
+                    .col-8
+                        .form-grop
+                            input.s.form-control(name='title', type='text', placeholder='BAŞLIK GİRİNİZ ', required='', value=post.title)
+                    .col-4
+                        .form-grop
+                            select.kategori.form-control(name="category", style='background-image: linear-gradient(#FE8702, #DA1C5E); color: white; border: none; background-color:#E94839;')
+                                each category in cats
+                                    option(value= category.slug) #{category.display_name}
+                .form-grop(style='margin-right: -10px')
+                    textarea#article.form-control(name='content', cols='110', rows='20', autofocus='') #{post.content}
+                .form-grop
+                    input(type='submit', style='border-radius: 10px; float: right;', value="Yaynınla")
+                    input.select-image(type='file', name="img-path")
+
+
+    else
+        form.articleform(action='', method="POST", enctype="multipart/form-data", autocomplete="off")
+            .form-group
+                .row(style='margin-right: 10px; margin-top: 40px;')
+                    .col-8
+                        .form-grop
+                            input.s.form-control(name='title', type='text', placeholder='BAŞLIK GİRİNİZ ', required='')
+                    .col-4
+                        .form-grop
+                            select.kategori.form-control(name="category", style='background-image: linear-gradient(#FE8702, #DA1C5E); color: white; border: none; background-color:#E94839;')
+                                each category in cats
+                                    option(value= category.slug) #{category.display_name}
+                .form-grop(style='margin-right: -10px')
+                    textarea#article.form-control(name='content', cols='110', rows='20', autofocus='')
+                .form-grop
+                    input(type='submit', style='border-radius: 10px; float: right;', value="Yaynınla")
+                    input.select-image(type='file', name="img-path")        

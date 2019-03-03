@@ -1,0 +1,20 @@
+extends layout.pug
+
+block styles
+    link(rel="stylesheet", href="/static/css/cvs.css")
+
+block content
+    div.container.mt-3
+        .banner.text-center.mb-4
+            i.fa.fa-address-card-o(style="font-size: 200px")
+            h1 Merhaba, burada yazarlarımızın CV'lerini paylaşıyoruz
+            h3 Eğer CV'nizin burada yayınlanmasını istiyorsanız bize katılın.
+        ul.list-group
+            each cv in cvs
+                .cv-wrap.mb-3
+                    li.list-group-item
+                        .d-flex.bd-highlight.mb-2
+                            .mr-auto.p-2.bd-highlight.mt-2
+                                h3.name #{cv.name}
+                            .bd-highlight.mt-3.mr-1
+                                a.download-link(href= cv.downloadLink, target="_blank") İndir

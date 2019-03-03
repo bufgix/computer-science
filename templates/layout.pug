@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css")
+        link(href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
+        link(href='https://fonts.googleapis.com/css?family=K2D', rel='stylesheet')
+        link(rel='stylesheet', href='/static/css/hascode.css')
+        link(rel="stylesheet", href="/static/css/navbar.css")
+
+        title= title
+
+        block styles
+    body
+        #stars
+        #stars2
+        #stars3
+        #stars4
+    
+        nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+            .border-wrap.mb-1
+                a.navbar-brand(href='/') 
+                    img.mr-2(src="/static/site-icon.png", alt="brandimage", width="40", height="40")
+                    |Computer Science
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbarNav.collapse.navbar-collapse
+                ul.navbar-nav.nav-list
+                    li.nav-item.active
+                        .nav-element.d-flex.justify-content-center
+                            a.nav-link(href='/articles/projeler')
+                                .justify-content-center
+                                    i.fa.fa-paper-plane.ml-2
+                                |Projeler
+
+
+                    li.nav-item.active
+                        .nav-element.d-flex.justify-content-center
+                            a.nav-link(href='/about')
+                                .justify-center
+                                    i.fa.fa-info-circle.ml-4
+                                |Hakkımızda
+                    
+                    li.nav-item.active
+                        .nav-element.d-flex.justify-content-center
+                            a.nav-link(href='/cvs')
+                                .justify-center
+                                    i.fa.fa-address-card-o.ml-1
+                                |CV'ler
+
+                    li.nav-item.active
+                        .dropdown.d-flex.justify-content-center
+                            button.nav-element.d-flex.justify-content-center.dropdown-toggle(type="button", id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                                a.nav-link(href='/login')
+                                    .justify-center
+                                        i.fa.fa-paperclip
+                                    |Yazılar
+                            .dropdown-menu(aria-labelledby="dropdownMenuButton")
+                                each cat in cats
+                                    if cat.sub != "nondisplay"
+                                        a.nav-link(href="/articles/" + cat.slug) #{cat.display_name}
+      
+                    if !user
+                        li.nav-item.active
+                            .nav-element.d-flex.justify-content-center
+                                a.nav-link(href='/login')
+                                    .justify-center
+                                        i.fa.fa-diamond
+                                    |Yazar
+                    else
+                       li.nav-item.active
+                            .nav-element.d-flex.justify-content-center
+                                a.nav-link(href='/articles/new')
+                                    .justify-center
+                                        i.fa.fa-pencil.ml-3
+                                    |Yazı yaz  
+                       li.nav-item.active
+                            .nav-element.d-flex.justify-content-center
+                                a.nav-link(href='/logout')
+                                    .justify-center
+                                        i.fa.fa-power-off.ml-3
+                                    |Çıkış yap                     
+                .navbar-collapse.justify-content-end
+                    .input-group.pr-5.pl-5.mb-1
+                        input.form-control(id="sText", name="query", type='text', placeholder='Bişeyler ara')
+                        .input-group-append
+                            button.btn.btn-primary(type='submit', id="search")
+                                i.fa.fa-search.search
+
+
+    
+        div.container
+            != messages('message', locals)
+            if errors
+                each error, i in errors
+                    div.alert.alert-danger #{error.msg}
+            if secretErr
+                .alert.alert-danger #{secretErr}
+        block content
+        .container
+            .text-center.center-block.footer
+                br
+                a(href='#')
+                    i#social-fb.social.fa.fa-facebook.fa-3x
+                a(href='https://twitter.com/enterfrager', target="_blank")
+                    i#social-tw.social.fa.fa-twitter.fa-3x
+                a(href='https://www.instagram.com/computersciencetr/', target="_blank")
+                    i#social-gp.social.fa.fa-instagram.fa-3x.
+                a(href='mailto:computerscience1029', target="_blank")
+                    i#social-em.social.fa.fa-envelope.fa-3x
+
+
+
+        script(src="https://code.jquery.com/jquery-3.3.1.min.js")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js")
+
+        script. 
+            $("#search").click(() => {
+                //$.get('/search', {query: $("#sText").val() }, (data, status) => {
+
+                //})
+                window.location.href = "/search?query=" + $("#sText").val();
+                
+            })
+
+        block scripts
+    

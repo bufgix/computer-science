@@ -1,0 +1,184 @@
+@keyframes mainscreen {
+    0% {
+        background-color: #0C1648;
+    }
+    20% {
+        background-color: #001F39;
+    }
+    
+    40% {
+        background-color: #260B48;
+    }
+    60% {
+        background-color: #050A22;
+    }
+    80% {
+        background-color: #120522;
+    }
+    100% {
+        background-color: #000000;
+    }
+}
+
+
+
+@keyframes colorchange {
+    0%{
+      color: blue;
+    }
+    10%{   
+      color: #8e44ad;
+    }
+    20% {
+      color: #1abc9c;
+    }
+    30% {
+      color: #d35400;
+    }
+    40% {
+      color: blue;
+    }
+    50% {
+      color: #34495e;
+    }
+    60% {
+      color: blue;
+    }
+    70% {
+      color: #2980b9;
+    }
+    80% {
+      color: #f1c40f;
+    }
+    90%{
+      color: #2980b9;
+    }
+    100%{
+      
+      color: pink;
+    }
+  }
+
+
+
+
+.box{
+    width: 35rem;
+    padding: 40px;
+    background: #100E17;
+    text-align: center;
+    border-radius: 30px;
+    margin-bottom: 0px;
+}
+.box-wrap {
+  position: relative;
+  background: linear-gradient(to right, #fe8702, #da1c5e);
+  margin-top: 10px;
+  padding-left: 1px;
+  padding-right: 2px;
+  border-radius: 30px;
+}
+
+.box h1{
+    background: linear-gradient(to right, #fe8702, #da1c5e);
+    text-transform: uppercase;
+    font-weight: 500;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+}
+
+.box input[type="email"], .box input[type="password"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #a4523a;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.box input[type="email"]:focus, .box input[type="password"]:focus{
+    width: 320px;
+    border-color: brown;
+}
+
+.box input[type="submit"]{
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #a4523a;
+    padding: 14px 10px;
+    width: 220px;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+    background: linear-gradient(to right, #fe8702, #da1c5e);
+    text-transform: uppercase;
+    font-weight: 500;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: .5s;
+
+}
+
+@keyframes borderchange{
+    0%{
+        border-color: blue;
+      }
+      10%{   
+        border-color: #8e44ad;
+      }
+      20% {
+        border-color: #1abc9c;
+      }
+      30% {
+        border-color: #d35400;
+      }
+      40% {
+        border-color: blue;
+      }
+      50% {
+        border-color: #34495e;
+      }
+      60% {
+        border-color: blue;
+      }
+      70% {
+        border-color: #2980b9;
+      }
+      80% {
+        border-color: #f1c40f;
+      }
+      90%{
+        border-color: #2980b9;
+      }
+      100%{
+        
+        border-color: pink;
+      }
+
+}
+
+.box input[type="submit"]:hover{
+  background: linear-gradient(to right, #fe8702, #da1c5e);
+  color: white !important;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+}
+
+
+
+@media screen and (max-width: 55em) {
+  .box {
+    width: 20rem;
+  }
+  .box input[type="email"]:focus, .box input[type="password"]:focus{
+    width: 15rem;
+  }
+}

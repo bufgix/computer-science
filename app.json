@@ -1,0 +1,8 @@
+{
+    "name": "Computer Science",
+    "description": "Full featured web app written in Node.js",
+    "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+    "keywords": ["node", "express", "heroku"],
+    "image": "heroku/nodejs"
+  }
+  

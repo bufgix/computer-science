@@ -1,0 +1,45 @@
+extends layout.pug
+
+block styles
+    style.
+        form {
+            margin-top: 20px;
+            color: white;
+        }
+        input[type=email], input[type=password], input[type=text] {
+            background-color: #181818;
+        }
+        input[type=email]:focus , input[type=password]:focus, input[type=text]:focus {
+            background-color: #181818;
+            color: white;
+        }
+        .form-control:focus {
+        border-color: #4F8CC9;
+        box-shadow: inset 0 1px 1px rgba(52,58,64.075), 0 0 8px rgba(52,58,64, 0.6);
+        }
+        .registeric {
+            color: #4F8CC9;
+        }
+
+block content
+    div.container
+        div(style="font-size: 100px; text-align: center")
+            i(style="font-size: 100px").registeric.fa.fa-paper-plane.fa-10x
+        form(action="", method="post", autocomplete="off", id="loginForm")
+            div.form-group
+                label(for="email") Mail Adresi
+                input.form-control(type="email", name="email", placeholder="Mail adresi giriniz")
+            div.form-group
+                label(for="name") Isim
+                input.form-control(type="text", name="name", placeholder="Isminiz nedir?")
+            div.form-group
+                label(for="password") Şifre
+                input.form-control(type="password", name="password", placeholder="Şifre giriniz")
+            div.form-group
+                label(for="password_confirm") Şifre Tekrar
+                input.form-control(type="password", name="password_confirm", placeholder="Bi kere daha")
+            div.form-group
+                label(for="secret") Gizli Anahtar
+                input.form-control(type="password", name="secret", placeholder="Cok gizli anahtarı girin", aria-describedby="secretHelp")
+                small.form-text.text-muted(id="secretHelp") Eğer bunun hakkında fikriniz yoksa sayfayı kapatabilirsiniz.
+            input.btn.btn-outline-primary.mt-3(type="submit", value="Giriş Yap")

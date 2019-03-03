@@ -1,0 +1,86 @@
+extends layout.pug
+
+block styles
+    style.
+        .panel-wrapper {
+            margin-top: 30px;
+            position: relative;
+            background: linear-gradient(to right, #fe8702, #da1c5e);
+            padding: 2px;
+            border-radius: 12px;
+        }
+        .panel-block {
+            background-color: #100E17;
+            padding: 30px;
+            border-radius: 12px;
+        }
+        input[type=text] {
+            background-color: #9A988D;
+        }
+        input[type=text]:disabled {
+            background-color: #9A988D;
+        }
+        .spe {
+            background-image: linear-gradient(90deg, #fe8702, transparent);
+            border: 0;
+            height: 1px;
+        }
+
+block content
+    .container
+        .panel-wrapper
+            div.panel-block.container
+                    .row
+                        .col-md-6.text-center                
+                            img.img-fluid(src="/static/site-icon.png", alt="admin image", height="250", width="250")
+                        .col.md-6
+                            label.text-white(for="key") Bir gizli anahtar oluştur
+                            input.form-control(type="text", id="secretKey",name="key", eneable="false" disabled, aria-describedby="secretHelp")
+                            small.form-text.text-muted(id="secretHelp") Anahtar kullanıldıktan sonra bir daha kullanılamaz.
+                            .row
+                                button.btn.btn-warning.ml-3.mt-2#generate Oluştur
+                                button.btn.btn-success.ml-3.mt-2#copy Kopyala
+                            hr.spe
+                            h3.mt-2 CV ekle
+                            form(action="/generatecv", method="POST", autocomplete="off")
+                                label.text-white(for="cvname") İsim
+                                input.form-control(type="text", name="cvname", id="cvname")
+                                label.text-white(for="cvlink") İndirme Linki
+                                input.form-control(type="text", name="cvlink", id="cvlink")
+                                small.form-text.text-muted(id="cvlink") Çalışan bir link olduğundan emin olun
+                                input.btn.btn-success.mt-2#cv-confirm(type="submit", value="Oluştur")
+block scripts
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js")
+    script.
+        $(function() {
+            $("#copy").hide();
+            function copyToClipboard(text) {
+                var textArea = document.createElement( "textarea" );
+                textArea.value = text;
+                document.body.appendChild( textArea );
+                textArea.select();
+                try {
+                    var successful = document.execCommand( 'copy' );
+                    var msg = successful ? 'successful' : 'unsuccessful';
+                    console.log('Copying text command was ' + msg);
+                } catch (err) {
+                    console.log('Oops, unable to copy');
+                }
+
+                document.body.removeChild( textArea );
+            }
+            var socket = io.connect('http://' + window.location.hostname + ':' + window.location.port);
+            $("#generate").click(() => {
+                key = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+                socket.emit('secret key', key);
+                socket.on('success', (data) => {
+                    $("#secretKey").val(data);
+                    $("#copy").show();
+                    $("#generate").attr("disabled", true);
+                })
+                $("#copy").click(() => {   
+                    copyToClipboard(key);
+                })     
+            })
+
+        })

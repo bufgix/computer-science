@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css")
+        link(href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
+        link(href='https://fonts.googleapis.com/css?family=K2D', rel='stylesheet')
+        link(rel="stylesheet", href="/static/css/navbar.css")
+    
+    body
+        nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.bg-dark
+            .border-wrap
+                a.navbar-brand(href='#') Computer Science
+            button.navbar-toggler.mr-4(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbarNav.collapse.navbar-collapse
+                ul.navbar-nav
+                    li.nav-item.active
+                        .nav-element.d-flex.justify-content-center
+                            a.nav-link(href='#')
+                                .justify-content-center
+                                    i.fa.fa-paper-plane.ml-2
+                                |Projeler
+
+
+                    li.nav-item.active
+                        .nav-element.d-flex.justify-content-center
+                            a.nav-link(href='#')
+                                .justify-center
+                                    i.fa.fa-info-circle.ml-4
+                                |Hakkımızda
+                    
+                    li.nav-item.active
+                        .nav-element.d-flex.justify-content-center
+                            a.nav-link(href='#')
+                                .justify-center
+                                    i.fa.fa-address-card-o.ml-1
+                                |CV'ler
+        
+                    li.nav-item.active
+                        .nav-element.d-flex.justify-content-center
+                            a.nav-link(href='#')
+                                .justify-center
+                                    i.fa.fa-diamond
+                                |Yazar
+                            
+                .navbar-collapse.justify-content-end
+                    .input-group.pr-5.pl-5
+                        input.form-control(type='text', placeholder='Bişeyler ara')
+                        .input-group-append
+                            button.btn.btn-primary(type='button')
+                                i.fa.fa-search.search
+        
+        .content
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js")
+
+    
