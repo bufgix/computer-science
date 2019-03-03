@@ -1,4 +1,4 @@
-# Tam özelikli NodeJS ile yazılmış web uygulaması
+# Tam özellikli NodeJS ile yazılmış web uygulaması
 
 
 <img src="https://i.resimyukle.xyz/2HVeJf.png" width="400" height="400"/>
