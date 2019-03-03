@@ -1,7 +1,7 @@
 # Tam özellikli NodeJS ile yazılmış web uygulaması
 
 
-<img src="https://i.resimyukle.xyz/2HVeJf.png" width="400" height="400"/>
+<img src="https://i.resimyukle.xyz/2HVeJf.png" />
 
 Bu proje ACMKTU için yapılmıştır
 
